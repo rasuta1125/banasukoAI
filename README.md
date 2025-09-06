@@ -1,1 +1,1 @@
-# banasukoAI
+# banasuko-ai

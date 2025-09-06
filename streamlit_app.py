@@ -71,7 +71,6 @@ st.markdown(
     
     body {
         background: transparent !important;
-        color: #ffffff !important;
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
     }
 
@@ -175,10 +174,6 @@ st.markdown(
         transform: translateY(-5px) scale(1.03) perspective(1000px) translateZ(20px) !important;
     }
     
-    .stButton > button:hover::before {
-        left: 100%;
-    }
-    
     .stButton > button:active {
         transform: translateY(-2px) scale(1.01) !important;
         box-shadow: 
@@ -222,6 +217,10 @@ st.markdown(
         font-size: 1.2rem !important;
         text-transform: uppercase;
     }
+    /* 「しまう」という文字を非表示にする */
+    .stExpander > button > div:last-child {
+        display: none;
+    }
     
     .stExpanderDetails {
         background: rgba(26, 32, 44, 0.4) !important;
@@ -237,7 +236,7 @@ st.markdown(
     .stTextInput .st-eb,
     .stTextArea .st-eb {
         background: rgba(26, 32, 44, 0.8) !important;
-        color: rgba(255, 255, 255, 0.95) !important;
+        color: #ffffff !important;
         border: 2px solid rgba(255, 255, 255, 0.2) !important;
         border-radius: 16px !important;
         font-family: 'Inter', sans-serif !important;
@@ -492,7 +491,7 @@ st.markdown(
     }
     
     h2 {
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: #ffffff !important;
         font-family: 'Inter', sans-serif !important;
         font-weight: 600 !important;
         font-size: 1.6rem !important;
@@ -502,7 +501,7 @@ st.markdown(
     }
     
     h3, h4, h5, h6 {
-        color: rgba(255, 255, 255, 0.95) !important;
+        color: #ffffff !important;
         font-family: 'Inter', sans-serif !important;
         font-weight: 700 !important;
         letter-spacing: 0.025em !important;
@@ -510,7 +509,7 @@ st.markdown(
 
     /* Professional text styling */
     p, div, span, label {
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: #ffffff !important;
         font-family: 'Inter', sans-serif !important;
         font-weight: 400 !important;
         line-height: 1.7 !important;
@@ -518,7 +517,7 @@ st.markdown(
     
     /* Markdown content styling */
     .stMarkdown {
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: #ffffff !important;
     }
     
     .stMarkdown p {
@@ -639,7 +638,6 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-# --- End of Ultimate Professional CSS ---
 
 
 # --- Clean Professional Header ---
@@ -871,7 +869,7 @@ with col1:
                             else:
                                 st.warning(f"薬機法チェック：{st.session_state.yakujihou_a}")
                         except Exception as e:
-                            st.error(f"薬機法チェック中にエラーが発生しました（Aパターン）: {str(e)}")
+                            st.error(f"AI採点中にエラーが発生しました（Aパターン）: {str(e)}")
                             st.session_state.yakujihou_a = "エラー"
 
     # --- B Pattern Processing ---
@@ -1032,7 +1030,7 @@ with col1:
 
     # Ultimate A/B Test Comparison Section
     if st.session_state.score_a and st.session_state.score_b and \
-       st.session_state.score_a != "エラー" and st.session_state.score_b != "エラー":
+        st.session_state.score_a != "エラー" and st.session_state.score_b != "エラー":
         
         # Clean A/B Comparison Section
         st.markdown("---")
@@ -1095,19 +1093,14 @@ with col2:
         st.markdown(
             """
         - **1. 内容が一瞬で伝わるか**
-            - 伝えたいことが最初の1秒でターゲットに伝わるか。
+          - 伝えたいことが最初の1秒でターゲットに伝わるか。
         - **2. コピーの見やすさ**
-            - 文字が読みやすいか、サイズや配色が適切か。
+          - 文字が読みやすいか、サイズや配色が適切か。
         - **3. 行動喚起の明確さ**
-            - 『今すぐ予約』『LINE登録』などの行動喚起が明確で、ユーザーを誘導できているか。
+          - 『今すぐ予約』『LINE登録』などの行動喚起が明確で、ユーザーを誘導できているか。
         - **4. 写真とテキストの整合性**
-            - 背景画像と文字内容が一致し、全体として違和感がないか。
+          - 背景画像と文字内容が一致し、全体として違和感がないか。
         - **5. 情報量のバランス**
-            - 文字が多すぎず、視線誘導が自然で、情報が過負荷にならないか。
+          - 文字が多すぎず、視線誘導が自然で、情報が過負荷にならないか。
         """
         )
-
-    st.markdown("---")
-    st.info(
-        "**ヒント:** スコアやコメントは、広告改善のヒントとしてご活用ください。AIの提案は参考情報であり、最終的な判断は人間が行う必要があります。"
-    )

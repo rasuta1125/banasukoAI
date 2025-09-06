@@ -642,147 +642,40 @@ st.markdown(
 # --- End of Ultimate Professional CSS ---
 
 
-# --- Ultimate Landing Page Header ---
-st.markdown("""
-<div style="text-align: center; padding: 4rem 0 5rem 0; position: relative;">
-    <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(168, 85, 247, 0.12) 50%, rgba(6, 214, 160, 0.12) 100%); 
-                border-radius: 32px; 
-                padding: 4rem 3rem; 
-                backdrop-filter: blur(60px); 
-                border: 3px solid rgba(255, 255, 255, 0.15); 
-                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                           0 0 120px rgba(56, 189, 248, 0.3),
-                           inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                position: relative;
-                overflow: hidden;">
-        
-        <div style="position: absolute; 
-                    top: 0; 
-                    left: 0; 
-                    right: 0; 
-                    bottom: 0; 
-                    background: linear-gradient(45deg, rgba(56, 189, 248, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%); 
-                    animation: header-shimmer 6s ease-in-out infinite alternate;
-                    pointer-events: none;"></div>
-        
-        <h1 style="font-size: 6rem; 
-                   font-weight: 900; 
-                   background: linear-gradient(135deg, #38bdf8 0%, #a855f7 20%, #06d6a0 40%, #f59e0b 60%, #ef4444 80%, #38bdf8 100%); 
-                   background-size: 600% 600%; 
-                   -webkit-background-clip: text; 
-                   -webkit-text-fill-color: transparent; 
-                   background-clip: text; 
-                   margin-bottom: 1.5rem; 
-                   letter-spacing: -0.05em; 
-                   animation: mega-gradient-shift 12s ease-in-out infinite;
-                   text-shadow: 0 0 100px rgba(56, 189, 248, 0.6);
-                   position: relative;
-                   z-index: 2;
-                   transform: perspective(1000px) rotateX(8deg);">
-            バナスコAI
-        </h1>
-        
-        <h2 style="color: rgba(255, 255, 255, 0.85); 
-                   font-size: 1.8rem; 
-                   font-weight: 500; 
-                   margin-bottom: 1rem; 
-                   letter-spacing: 0.1em;
-                   position: relative;
-                   z-index: 2;">
-            AI広告診断システム
-        </h2>
-        
-        <p style="color: rgba(255, 255, 255, 0.75); 
-                  font-size: 1.2rem; 
-                  font-weight: 300; 
-                  max-width: 700px; 
-                  margin: 0 auto 3rem auto; 
-                  line-height: 1.8;
-                  position: relative;
-                  z-index: 2;">
-            もう、無駄打ちしない。広告を"武器"に変えるプロフェッショナルAIツール
-        </p>
-        
-        <div style="display: inline-block; 
-                    padding: 1.5rem 3rem; 
-                    background: linear-gradient(135deg, rgba(56, 189, 248, 0.25) 0%, rgba(168, 85, 247, 0.25) 100%); 
-                    border-radius: 60px; 
-                    border: 2px solid rgba(255, 255, 255, 0.25); 
-                    backdrop-filter: blur(20px);
-                    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.3);
-                    position: relative;
-                    z-index: 2;">
-            <span style="color: rgba(255, 255, 255, 0.95); 
-                         font-size: 1rem; 
-                         font-weight: 600; 
-                         letter-spacing: 0.15em;
-                         text-transform: uppercase;">
-                Professional Banner Analysis Platform
-            </span>
-        </div>
-    </div>
-</div>
+# --- Clean Professional Header ---
+st.markdown('<div class="main-header">', unsafe_allow_html=True)
 
-<style>
-@keyframes header-shimmer {
-    0% { opacity: 0.4; transform: translateX(-100px); }
-    100% { opacity: 0.8; transform: translateX(100px); }
-}
-</style>
+# Use standard Streamlit components instead of complex HTML
+st.markdown("# バナスコAI")
+st.markdown("## AI広告診断システム") 
+st.markdown("### もう、無駄打ちしない。広告を\"武器\"に変えるプロフェッショナルAIツール")
+
+st.markdown("---")
+
+# Add professional badge
+st.markdown("""
+<div style="text-align: center; margin: 2rem 0;">
+    <span style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2)); 
+                 padding: 1rem 2rem; 
+                 border-radius: 50px; 
+                 border: 1px solid rgba(255, 255, 255, 0.2); 
+                 color: rgba(255, 255, 255, 0.9);
+                 font-weight: 600;
+                 letter-spacing: 0.1em;">
+        Professional Banner Analysis Platform
+    </span>
+</div>
 """, unsafe_allow_html=True)
+
+st.markdown('</div>', unsafe_allow_html=True)
 
 
 # --- Ultimate Main Content Layout ---
 col1, col2 = st.columns([3, 2], gap="large")
 
 with col1:
-    # Ultimate Premium Input Form Container
-    st.markdown("""
-    <div style="background: linear-gradient(135deg, rgba(26, 32, 44, 0.6) 0%, rgba(45, 55, 72, 0.6) 100%); 
-                backdrop-filter: blur(60px); 
-                border: 3px solid rgba(255, 255, 255, 0.15); 
-                border-radius: 32px; 
-                padding: 3rem; 
-                margin-bottom: 3rem; 
-                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                           0 0 120px rgba(56, 189, 248, 0.2),
-                           inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                position: relative;
-                overflow: hidden;">
-        
-        <div style="position: absolute; 
-                    top: 0; 
-                    left: 0; 
-                    right: 0; 
-                    bottom: 0; 
-                    background: linear-gradient(45deg, rgba(56, 189, 248, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%); 
-                    animation: form-pulse 8s ease-in-out infinite alternate;
-                    pointer-events: none;"></div>
-        
-        <h3 style="color: rgba(255, 255, 255, 0.95); 
-                   font-size: 2.2rem; 
-                   font-weight: 800; 
-                   text-align: center; 
-                   margin-bottom: 2.5rem; 
-                   letter-spacing: 0.05em;
-                   text-transform: uppercase;
-                   background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
-                   -webkit-background-clip: text;
-                   -webkit-text-fill-color: transparent;
-                   background-clip: text;
-                   position: relative;
-                   z-index: 2;">
-            バナー診断フォーム
-        </h3>
-    </div>
-    
-    <style>
-    @keyframes form-pulse {
-        0% { opacity: 0.3; }
-        100% { opacity: 0.7; }
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    # Clean Form Header
+    st.subheader("📝 バナー診断フォーム")
 
     with st.expander("基本情報", expanded=True):
         user_name = st.text_input("ユーザー名", key="user_name_input")
@@ -813,53 +706,9 @@ with col1:
         follower_gain_input = st.text_input("フォロワー増加数（任意）", help="Instagramなどのフォロワー増加数があれば入力します。", key="follower_gain_input_text")
         memo_input = st.text_area("メモ（任意）", help="その他、特記事項があれば入力してください。", key="memo_input_area")
 
-    # Ultimate Premium Upload Section
-    st.markdown("""
-    <div style="background: linear-gradient(135deg, rgba(26, 32, 44, 0.6) 0%, rgba(45, 55, 72, 0.6) 100%); 
-                backdrop-filter: blur(60px); 
-                border: 3px solid rgba(255, 255, 255, 0.15); 
-                border-radius: 32px; 
-                padding: 3rem; 
-                margin: 3rem 0; 
-                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                           0 0 120px rgba(168, 85, 247, 0.2),
-                           inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                position: relative;
-                overflow: hidden;">
-        
-        <div style="position: absolute; 
-                    top: 0; 
-                    left: 0; 
-                    right: 0; 
-                    bottom: 0; 
-                    background: linear-gradient(45deg, rgba(168, 85, 247, 0.05) 0%, rgba(56, 189, 248, 0.05) 100%); 
-                    animation: upload-shimmer 6s ease-in-out infinite alternate;
-                    pointer-events: none;"></div>
-        
-        <h3 style="color: rgba(255, 255, 255, 0.95); 
-                   font-size: 2.2rem; 
-                   font-weight: 800; 
-                   text-align: center; 
-                   margin-bottom: 2.5rem; 
-                   letter-spacing: 0.05em;
-                   text-transform: uppercase;
-                   background: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
-                   -webkit-background-clip: text;
-                   -webkit-text-fill-color: transparent;
-                   background-clip: text;
-                   position: relative;
-                   z-index: 2;">
-            画像アップロード・AI診断
-        </h3>
-    </div>
-    
-    <style>
-    @keyframes upload-shimmer {
-        0% { opacity: 0.3; }
-        100% { opacity: 0.7; }
-    }
-    </style>
-    """, unsafe_allow_html=True)
+    # Clean Upload Header
+    st.subheader("📸 画像アップロード・AI診断")
+    st.markdown("---")
 
     uploaded_file_a = st.file_uploader("Aパターン画像をアップロード", type=["png", "jpg", "jpeg"], key="a_upload")
     uploaded_file_b = st.file_uploader("Bパターン画像をアップロード", type=["png", "jpg", "jpeg"], key="b_upload")
@@ -872,53 +721,9 @@ with col1:
     if 'comment_b' not in st.session_state: st.session_state.comment_b = None
     if 'yakujihou_b' not in st.session_state: st.session_state.yakujihou_b = None
 
-    # --- Ultimate A Pattern Processing ---
+    # --- A Pattern Processing ---
     if uploaded_file_a:
-        st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%); 
-                    border-radius: 32px; 
-                    padding: 3rem; 
-                    margin: 3rem 0; 
-                    border: 3px solid rgba(56, 189, 248, 0.3); 
-                    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                               0 0 120px rgba(56, 189, 248, 0.3),
-                               inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                    position: relative;
-                    overflow: hidden;">
-            
-            <div style="position: absolute; 
-                        top: 0; 
-                        left: 0; 
-                        right: 0; 
-                        bottom: 0; 
-                        background: linear-gradient(45deg, rgba(56, 189, 248, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%); 
-                        animation: pattern-pulse 4s ease-in-out infinite alternate;
-                        pointer-events: none;"></div>
-                        
-            <h4 style="color: rgba(255, 255, 255, 0.95); 
-                       text-align: center; 
-                       margin-bottom: 2.5rem; 
-                       font-size: 1.8rem; 
-                       font-weight: 800;
-                       text-transform: uppercase;
-                       letter-spacing: 2px;
-                       background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
-                       -webkit-background-clip: text;
-                       -webkit-text-fill-color: transparent;
-                       background-clip: text;
-                       position: relative;
-                       z-index: 2;">
-                Aパターン診断
-            </h4>
-        </div>
-        
-        <style>
-        @keyframes pattern-pulse {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.8; }
-        }
-        </style>
-        """, unsafe_allow_html=True)
+        st.markdown("#### 🔷 Aパターン診断")
         
         img_col_a, result_col_a = st.columns([1, 2])
 
@@ -1024,74 +829,14 @@ with col1:
         
         with result_col_a:
             if st.session_state.score_a:
-                # Ultimate Scoring Display Design
-                st.markdown("""
-                <div style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%); 
-                            border-radius: 28px; 
-                            padding: 3rem; 
-                            text-align: center; 
-                            position: relative; 
-                            overflow: hidden; 
-                            border: 3px solid rgba(56, 189, 248, 0.4); 
-                            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                                       0 0 150px rgba(56, 189, 248, 0.3), 
-                                       inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                            margin: 2rem 0;">
-                    
-                    <div style="position: absolute; 
-                                top: 0; 
-                                left: 0; 
-                                right: 0; 
-                                bottom: 0; 
-                                background: linear-gradient(45deg, rgba(56, 189, 248, 0.1) 0%, rgba(168, 85, 247, 0.1) 100%); 
-                                animation: result-shimmer 5s ease-in-out infinite alternate;
-                                pointer-events: none;"></div>
-                    
-                    <h3 style="position: relative; 
-                               z-index: 2; 
-                               color: rgba(255, 255, 255, 0.95); 
-                               font-size: 1.8rem; 
-                               font-weight: 800; 
-                               margin-bottom: 2.5rem; 
-                               text-transform: uppercase; 
-                               letter-spacing: 3px;
-                               background: linear-gradient(135deg, #38bdf8 0%, #a855f7 100%);
-                               -webkit-background-clip: text;
-                               -webkit-text-fill-color: transparent;
-                               background-clip: text;">
-                        診断結果
-                    </h3>
-                </div>
-                
-                <style>
-                @keyframes result-shimmer {
-                    0% { opacity: 0.4; }
-                    100% { opacity: 0.8; }
-                }
-                </style>
-                """, unsafe_allow_html=True)
+                # Clean Result Header
+                st.markdown("### 🎯 Aパターン診断結果")
                 
                 # Ultra-premium metric display
                 st.metric("総合スコア", st.session_state.score_a)
                 
-                # Premium comment display
-                st.markdown(f"""
-                <div style="background: rgba(26, 32, 44, 0.8); 
-                            border-radius: 20px; 
-                            padding: 2rem; 
-                            margin: 2rem 0; 
-                            border: 2px solid rgba(56, 189, 248, 0.4); 
-                            backdrop-filter: blur(40px); 
-                            box-shadow: 0 20px 40px rgba(56, 189, 248, 0.3);">
-                    <p style="color: rgba(255, 255, 255, 0.95); 
-                              font-size: 1.1rem; 
-                              line-height: 1.8; 
-                              margin: 0; 
-                              font-weight: 500;">
-                        <strong style="color: rgba(56, 189, 248, 0.95);">改善コメント:</strong> {st.session_state.comment_a}
-                    </p>
-                </div>
-                """, unsafe_allow_html=True)
+                # Simple comment display
+                st.info(f"**改善コメント:** {st.session_state.comment_a}")
                 
                 if industry in ["美容", "健康", "医療"]:
                     with st.spinner("薬機法チェックを実行中（Aパターン）..."):
@@ -1129,53 +874,9 @@ with col1:
                             st.error(f"薬機法チェック中にエラーが発生しました（Aパターン）: {str(e)}")
                             st.session_state.yakujihou_a = "エラー"
 
-    # --- Ultimate B Pattern Processing ---
+    # --- B Pattern Processing ---
     if uploaded_file_b:
-        st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(56, 189, 248, 0.15) 100%); 
-                    border-radius: 32px; 
-                    padding: 3rem; 
-                    margin: 3rem 0; 
-                    border: 3px solid rgba(168, 85, 247, 0.3); 
-                    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                               0 0 120px rgba(168, 85, 247, 0.3),
-                               inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                    position: relative;
-                    overflow: hidden;">
-            
-            <div style="position: absolute; 
-                        top: 0; 
-                        left: 0; 
-                        right: 0; 
-                        bottom: 0; 
-                        background: linear-gradient(45deg, rgba(168, 85, 247, 0.1) 0%, rgba(56, 189, 248, 0.1) 100%); 
-                        animation: pattern-pulse-b 4s ease-in-out infinite alternate;
-                        pointer-events: none;"></div>
-                        
-            <h4 style="color: rgba(255, 255, 255, 0.95); 
-                       text-align: center; 
-                       margin-bottom: 2.5rem; 
-                       font-size: 1.8rem; 
-                       font-weight: 800;
-                       text-transform: uppercase;
-                       letter-spacing: 2px;
-                       background: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
-                       -webkit-background-clip: text;
-                       -webkit-text-fill-color: transparent;
-                       background-clip: text;
-                       position: relative;
-                       z-index: 2;">
-                Bパターン診断
-            </h4>
-        </div>
-        
-        <style>
-        @keyframes pattern-pulse-b {
-            0% { opacity: 0.4; }
-            100% { opacity: 0.8; }
-        }
-        </style>
-        """, unsafe_allow_html=True)
+        st.markdown("#### 🔷 Bパターン診断")
         
         img_col_b, result_col_b = st.columns([1, 2])
     
@@ -1284,74 +985,14 @@ with col1:
     
         with result_col_b:
             if st.session_state.score_b:
-                # Ultimate Scoring Display Design for B Pattern
-                st.markdown("""
-                <div style="background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(56, 189, 248, 0.2) 100%); 
-                            border-radius: 28px; 
-                            padding: 3rem; 
-                            text-align: center; 
-                            position: relative; 
-                            overflow: hidden; 
-                            border: 3px solid rgba(168, 85, 247, 0.4); 
-                            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                                       0 0 150px rgba(168, 85, 247, 0.3), 
-                                       inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                            margin: 2rem 0;">
-                    
-                    <div style="position: absolute; 
-                                top: 0; 
-                                left: 0; 
-                                right: 0; 
-                                bottom: 0; 
-                                background: linear-gradient(45deg, rgba(168, 85, 247, 0.1) 0%, rgba(56, 189, 248, 0.1) 100%); 
-                                animation: result-shimmer-b 5s ease-in-out infinite alternate;
-                                pointer-events: none;"></div>
-                    
-                    <h3 style="position: relative; 
-                               z-index: 2; 
-                               color: rgba(255, 255, 255, 0.95); 
-                               font-size: 1.8rem; 
-                               font-weight: 800; 
-                               margin-bottom: 2.5rem; 
-                               text-transform: uppercase; 
-                               letter-spacing: 3px;
-                               background: linear-gradient(135deg, #a855f7 0%, #38bdf8 100%);
-                               -webkit-background-clip: text;
-                               -webkit-text-fill-color: transparent;
-                               background-clip: text;">
-                        診断結果
-                    </h3>
-                </div>
-                
-                <style>
-                @keyframes result-shimmer-b {
-                    0% { opacity: 0.4; }
-                    100% { opacity: 0.8; }
-                }
-                </style>
-                """, unsafe_allow_html=True)
+                # Clean Result Header
+                st.markdown("### 🎯 Bパターン診断結果")
                 
                 # Ultra-premium metric display
                 st.metric("総合スコア", st.session_state.score_b)
                 
-                # Premium comment display
-                st.markdown(f"""
-                <div style="background: rgba(26, 32, 44, 0.8); 
-                            border-radius: 20px; 
-                            padding: 2rem; 
-                            margin: 2rem 0; 
-                            border: 2px solid rgba(168, 85, 247, 0.4); 
-                            backdrop-filter: blur(40px); 
-                            box-shadow: 0 20px 40px rgba(168, 85, 247, 0.3);">
-                    <p style="color: rgba(255, 255, 255, 0.95); 
-                              font-size: 1.1rem; 
-                              line-height: 1.8; 
-                              margin: 0; 
-                              font-weight: 500;">
-                        <strong style="color: rgba(168, 85, 247, 0.95);">改善コメント:</strong> {st.session_state.comment_b}
-                    </p>
-                </div>
-                """, unsafe_allow_html=True)
+                # Simple comment display
+                st.info(f"**改善コメント:** {st.session_state.comment_b}")
     
                 if industry in ["美容", "健康", "医療"]:
                     with st.spinner("薬機法チェックを実行中（Bパターン）..."):
@@ -1393,58 +1034,9 @@ with col1:
     if st.session_state.score_a and st.session_state.score_b and \
        st.session_state.score_a != "エラー" and st.session_state.score_b != "エラー":
         
-        # Ultimate comparison section design
-        st.markdown("""
-        <div style="background: linear-gradient(135deg, rgba(6, 214, 160, 0.15) 0%, rgba(56, 189, 248, 0.15) 50%, rgba(168, 85, 247, 0.15) 100%); 
-                    border-radius: 32px; 
-                    padding: 4rem; 
-                    margin: 4rem 0; 
-                    text-align: center; 
-                    border: 4px solid rgba(6, 214, 160, 0.3); 
-                    box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5), 
-                               0 0 200px rgba(6, 214, 160, 0.3), 
-                               inset 0 4px 0 rgba(255, 255, 255, 0.25);
-                    position: relative;
-                    overflow: hidden;">
-            
-            <div style="position: absolute; 
-                        top: 0; 
-                        left: 0; 
-                        right: 0; 
-                        bottom: 0; 
-                        background: linear-gradient(45deg, rgba(6, 214, 160, 0.1) 0%, rgba(56, 189, 248, 0.1) 50%, rgba(168, 85, 247, 0.1) 100%); 
-                        animation: ultimate-comparison-pulse 8s ease-in-out infinite alternate;
-                        pointer-events: none;"></div>
-            
-            <h3 style="color: rgba(255, 255, 255, 0.95); 
-                       font-size: 2.5rem; 
-                       font-weight: 900; 
-                       margin-bottom: 2.5rem; 
-                       text-transform: uppercase; 
-                       letter-spacing: 4px; 
-                       background: linear-gradient(135deg, #06d6a0 0%, #38bdf8 50%, #a855f7 100%); 
-                       -webkit-background-clip: text; 
-                       -webkit-text-fill-color: transparent; 
-                       background-clip: text;
-                       position: relative;
-                       z-index: 2;
-                       animation: ultimate-title-glow 3s ease-in-out infinite alternate;">
-                Ultimate A/B Analysis
-            </h3>
-        </div>
-        
-        <style>
-        @keyframes ultimate-comparison-pulse {
-            0% { opacity: 0.3; }
-            100% { opacity: 0.8; }
-        }
-        
-        @keyframes ultimate-title-glow {
-            0% { text-shadow: 0 0 30px rgba(6, 214, 160, 0.5); }
-            100% { text-shadow: 0 0 60px rgba(6, 214, 160, 0.8); }
-        }
-        </style>
-        """, unsafe_allow_html=True)
+        # Clean A/B Comparison Section
+        st.markdown("---")
+        st.markdown("### ⚖️ A/Bテスト比較分析")
         
         if st.button("A/Bテスト比較を実行", key="ab_compare_final_btn"):
             with st.spinner("AIがA/Bパターンを比較しています..."):
@@ -1491,68 +1083,9 @@ Bパターン診断結果:
 2. ターゲット層により特化したメッセージング最適化
 ---"""
                     
-                    # Ultimate comparison results display
-                    st.markdown("""
-                    <div style="background: linear-gradient(135deg, rgba(6, 214, 160, 0.2) 0%, rgba(56, 189, 248, 0.2) 100%); 
-                                border-radius: 28px; 
-                                padding: 3rem; 
-                                margin: 3rem 0; 
-                                border: 3px solid rgba(6, 214, 160, 0.4); 
-                                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4), 
-                                           0 0 120px rgba(6, 214, 160, 0.4), 
-                                           inset 0 3px 0 rgba(255, 255, 255, 0.2);
-                                position: relative;
-                                overflow: hidden;">
-                        
-                        <div style="position: absolute; 
-                                    top: 0; 
-                                    left: 0; 
-                                    right: 0; 
-                                    bottom: 0; 
-                                    background: linear-gradient(45deg, rgba(6, 214, 160, 0.1) 0%, rgba(56, 189, 248, 0.1) 100%); 
-                                    animation: comparison-result-pulse 6s ease-in-out infinite alternate;
-                                    pointer-events: none;"></div>
-                        
-                        <h3 style="color: rgba(6, 214, 160, 0.95); 
-                                   text-align: center; 
-                                   font-size: 2rem; 
-                                   font-weight: 800; 
-                                   margin-bottom: 2.5rem; 
-                                   text-transform: uppercase; 
-                                   letter-spacing: 3px;
-                                   position: relative;
-                                   z-index: 2;">
-                            A/Bテスト比較結果
-                        </h3>
-                    </div>
-                    
-                    <style>
-                    @keyframes comparison-result-pulse {
-                        0% { opacity: 0.4; }
-                        100% { opacity: 0.8; }
-                    }
-                    </style>
-                    """, unsafe_allow_html=True)
-                    
-                    # Premium content display
-                    st.markdown(f"""
-                    <div style="background: rgba(26, 32, 44, 0.8); 
-                                border-radius: 20px; 
-                                padding: 2.5rem; 
-                                margin: 2rem 0; 
-                                border: 2px solid rgba(6, 214, 160, 0.4); 
-                                backdrop-filter: blur(40px); 
-                                box-shadow: 0 20px 40px rgba(6, 214, 160, 0.3);">
-                        <pre style="color: rgba(255, 255, 255, 0.95); 
-                                    font-size: 1.1rem; 
-                                    line-height: 2; 
-                                    margin: 0; 
-                                    font-family: 'Inter', sans-serif; 
-                                    white-space: pre-wrap; 
-                                    background: transparent; 
-                                    border: none;">{ab_compare_content}</pre>
-                    </div>
-                    """, unsafe_allow_html=True)
+                    # Simple comparison results display
+                    st.markdown("#### 📊 A/Bテスト比較結果")
+                    st.success(ab_compare_content)
                 except Exception as e:
                     st.error(f"A/Bテスト比較中にエラーが発生しました: {str(e)}")
 

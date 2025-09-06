@@ -8,7 +8,7 @@ from PIL import Image
 from datetime import datetime
 from openai import OpenAI
 
-import auth_utils_test as auth_utils # Import test version for demo
+import auth_utils # Import Firebase authentication
 
 
 # Google Apps Script (GAS) and Google Drive information (GAS for legacy spreadsheet, will be removed later if not needed)

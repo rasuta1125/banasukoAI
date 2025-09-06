@@ -24,19 +24,25 @@ STORAGE_BUCKET = os.getenv("FIREBASE_STORAGE_BUCKET")
 
 # 必須の環境変数が設定されているかチェック
 missing_vars = []
-if not FIREBASE_API_KEY: missing_vars.append("FIREBASE_WEB_API_KEY")
-if not FIREBASE_PROJECT_ID: missing_vars.append("FIREBASE_PROJECT_ID")
-if not ADMIN_PROJECT_ID: missing_vars.append("FIREBASE_PROJECT_ID_ADMIN")
-if not ADMIN_PRIVATE_KEY_RAW: missing_vars.append("FIREBASE_PRIVATE_KEY_ADMIN")
-if not ADMIN_CLIENT_EMAIL: missing_vars.append("FIREBASE_CLIENT_EMAIL_ADMIN")
-if not STORAGE_BUCKET: missing_vars.append("FIREBASE_STORAGE_BUCKET")
+if not FIREBASE_API_KEY:
+    missing_vars.append("FIREBASE_WEB_API_KEY")
+if not FIREBASE_PROJECT_ID:
+    missing_vars.append("FIREBASE_PROJECT_ID")
+if not ADMIN_PROJECT_ID:
+    missing_vars.append("FIREBASE_PROJECT_ID_ADMIN")
+if not ADMIN_PRIVATE_KEY_RAW:
+    missing_vars.append("FIREBASE_PRIVATE_KEY_ADMIN")
+if not ADMIN_CLIENT_EMAIL:
+    missing_vars.append("FIREBASE_CLIENT_EMAIL_ADMIN")
+if not STORAGE_BUCKET:
+    missing_vars.append("FIREBASE_STORAGE_BUCKET")
 
 if missing_vars:
     st.error(f"❌ 必須の環境変数が不足しています: {', '.join(missing_vars)}。Streamlit CloudのSecretsを確認してください。")
     st.stop()
 
 # --- Firebase Admin SDKの初期化 ---
-# アプリのセッション中で一度だけ実行されるように制御
+# アプリのセッション中で一度だけ実行されるように��御
 try:
     if not firebase_admin._apps:
         # private_keyの改行コードを正しく処理
@@ -46,10 +52,10 @@ try:
         service_account_info = {
             "type": "service_account",
             "project_id": ADMIN_PROJECT_ID,
-            "private_key_id": os.getenv("FIREBASE_PRIVATE_KEY_ID_ADMIN", ""), # オプション
+            "private_key_id": os.getenv("FIREBASE_PRIVATE_KEY_ID_ADMIN", ""),
             "private_key": admin_private_key,
             "client_email": ADMIN_CLIENT_EMAIL,
-            "client_id": os.getenv("FIREBASE_CLIENT_ID_ADMIN", ""), # オプション
+            "client_id": os.getenv("FIREBASE_CLIENT_ID_ADMIN", ""),
             "auth_uri": "https://accounts.google.com/o/oauth2/auth",
             "token_uri": "https://oauth2.googleapis.com/token",
             "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
@@ -59,9 +65,8 @@ try:
         cred = credentials.Certificate(service_account_info)
         firebase_admin.initialize_app(cred, {'storageBucket': STORAGE_BUCKET})
 
-    # 初期化が成功したら、Firestoreクライアントを取得
-    db = firestore.client()
-
+        # 初期化が成功したら、Firestoreクライアントを取得
+        db = firestore.client()
 except Exception as e:
     st.error(f"❌ Firebase Admin SDKの初期化に失敗しました。サービスアカウントキーを確認してください。")
     st.error(f"エラー詳細: {e}")
@@ -168,6 +173,7 @@ def login_page():
     password = st.text_input("パスワード", type="password", key="login_password")
 
     login_col, create_col = st.columns(2)
+
     with login_col:
         if st.button("ログイン", key="login_button"):
             with st.spinner("ログイン中..."):
@@ -217,10 +223,8 @@ def logout():
     st.rerun()
 
 def check_login():
-    """
-    ユーザーのログイン状態をチェックし、未ログインならログインページを表示。
-    ログイン済みならサイドバーに情報を表示。
-    """
+    """ ユーザーのログイン状態をチェックし、未ログインならログインページを表示。
+    ログイン済みならサイドバーに情報を表示。 """
     if not st.session_state.get("logged_in"):
         login_page()
         st.stop()

@@ -181,62 +181,19 @@ st.markdown(
             0 8px 20px rgba(168, 85, 247, 0.3) !important;
     }
 
-    /* Ultimate expander styling */
-    .stExpander {
-        background: rgba(26, 32, 44, 0.6) !important;
-        border: 2px solid rgba(255, 255, 255, 0.15) !important;
-        border-radius: 24px !important;
-        backdrop-filter: blur(40px) !important;
-        margin: 2rem 0 !important;
-        overflow: hidden !important;
-        box-shadow: 
-            0 20px 40px rgba(0, 0, 0, 0.3),
-            0 0 80px rgba(56, 189, 248, 0.1),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    }
-    
-    .stExpander:hover {
-        transform: translateY(-4px) scale(1.01) !important;
-        box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 120px rgba(56, 189, 248, 0.2),
-            inset 0 2px 0 rgba(255, 255, 255, 0.2) !important;
-        border-color: rgba(56, 189, 248, 0.3) !important;
-    }
-    
-    .stExpander > div > div {
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%) !important;
-        border-bottom: 2px solid rgba(255, 255, 255, 0.15) !important;
-        border-radius: 24px 24px 0 0 !important;
-        color: rgba(255, 255, 255, 0.95) !important;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 700 !important;
-        letter-spacing: 0.05em !important;
-        padding: 2rem !important;
-        font-size: 1.2rem !important;
-        text-transform: uppercase;
-    }
-    /* 「しまう」という文字を非表示にする */
-    .stExpander > button > div:last-child {
-        display: none;
-    }
-    
-    .stExpanderDetails {
-        background: rgba(26, 32, 44, 0.4) !important;
-        border-radius: 0 0 24px 24px !important;
-        padding: 2.5rem !important;
-    }
-
-    /* Ultimate input styling */
+    /* Ultimate input styling - MODIFIED */
     div[data-baseweb="input"] input,
     div[data-baseweb="select"] span,
     div[data-baseweb="textarea"] textarea,
     .stSelectbox .st-bv,
     .stTextInput .st-eb,
-    .stTextArea .st-eb {
+    .stTextArea .st-eb,
+    /* --- More robust selectors for text color --- */
+    [data-testid="stTextInput"] input,
+    [data-testid="stSelectbox"] span,
+    [data-testid="stTextarea"] textarea {
         background: rgba(26, 32, 44, 0.8) !important;
-        color: #ffffff !important;
+        color: #FBC02D !important; /* CHANGED TO YELLOW */
         border: 2px solid rgba(255, 255, 255, 0.2) !important;
         border-radius: 16px !important;
         font-family: 'Inter', sans-serif !important;
@@ -267,206 +224,9 @@ st.markdown(
         transform: translateY(-2px) scale(1.01) !important;
         background: rgba(26, 32, 44, 0.9) !important;
     }
-
-    /* ULTIMATE METRIC DISPLAY - Push Streamlit's limits */
-    [data-testid="stMetricValue"] {
-        font-family: 'JetBrains Mono', monospace !important;
-        font-size: 5rem !important;
-        font-weight: 900 !important;
-        background: linear-gradient(135deg, #38bdf8 0%, #a855f7 25%, #06d6a0 50%, #f59e0b 75%, #ef4444 100%) !important;
-        background-size: 400% 400% !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-        text-shadow: 
-            0 0 30px rgba(56, 189, 248, 0.8),
-            0 0 60px rgba(168, 85, 247, 0.6),
-            0 0 90px rgba(6, 214, 160, 0.4),
-            0 0 120px rgba(245, 158, 11, 0.3) !important;
-        animation: 
-            ultimate-glow 4s ease-in-out infinite alternate,
-            gradient-mega-flow 10s ease-in-out infinite,
-            pulse-scale 6s ease-in-out infinite !important;
-        filter: 
-            drop-shadow(0 0 40px rgba(56, 189, 248, 0.7))
-            drop-shadow(0 0 80px rgba(168, 85, 247, 0.5)) !important;
-        text-align: center !important;
-        display: block !important;
-        margin: 1rem 0 !important;
-        transform: perspective(1000px) rotateX(5deg);
-        position: relative;
-    }
     
-    [data-testid="stMetricValue"]::before {
-        content: '';
-        position: absolute;
-        top: -20px;
-        left: -20px;
-        right: -20px;
-        bottom: -20px;
-        background: linear-gradient(45deg, rgba(56, 189, 248, 0.1), rgba(168, 85, 247, 0.1));
-        border-radius: 20px;
-        z-index: -1;
-        animation: aura-pulse 3s ease-in-out infinite alternate;
-    }
-    
-    @keyframes ultimate-glow {
-        from { 
-            text-shadow: 
-                0 0 30px rgba(56, 189, 248, 0.8),
-                0 0 60px rgba(168, 85, 247, 0.6),
-                0 0 90px rgba(6, 214, 160, 0.4);
-            filter: 
-                drop-shadow(0 0 40px rgba(56, 189, 248, 0.7))
-                drop-shadow(0 0 80px rgba(168, 85, 247, 0.5));
-        }
-        to { 
-            text-shadow: 
-                0 0 50px rgba(56, 189, 248, 1.0),
-                0 0 100px rgba(168, 85, 247, 0.8),
-                0 0 150px rgba(6, 214, 160, 0.6);
-            filter: 
-                drop-shadow(0 0 60px rgba(56, 189, 248, 0.9))
-                drop-shadow(0 0 120px rgba(168, 85, 247, 0.7));
-        }
-    }
-    
-    @keyframes gradient-mega-flow {
-        0%, 100% { background-position: 0% 50%; }
-        25% { background-position: 100% 0%; }
-        50% { background-position: 100% 100%; }
-        75% { background-position: 0% 100%; }
-    }
-    
-    @keyframes pulse-scale {
-        0%, 100% { transform: perspective(1000px) rotateX(5deg) scale(1); }
-        50% { transform: perspective(1000px) rotateX(5deg) scale(1.05); }
-    }
-    
-    @keyframes aura-pulse {
-        from { opacity: 0.3; transform: scale(1); }
-        to { opacity: 0.7; transform: scale(1.1); }
-    }
-    
-    [data-testid="stMetricLabel"] {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-family: 'Inter', sans-serif !important;
-        font-size: 1.3rem !important;
-        font-weight: 700 !important;
-        text-transform: uppercase !important;
-        letter-spacing: 3px !important;
-        text-align: center !important;
-        margin-bottom: 1rem !important;
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.9), rgba(168, 85, 247, 0.9)) !important;
-        -webkit-background-clip: text !important;
-        -webkit-text-fill-color: transparent !important;
-        background-clip: text !important;
-        animation: label-glow 2s ease-in-out infinite alternate;
-    }
-    
-    @keyframes label-glow {
-        from { filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.5)); }
-        to { filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.7)); }
-    }
-    
-    [data-testid="stMetricDelta"] {
-        color: #98a2b3 !important;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 500 !important;
-    }
-
-    /* Ultimate alerts */
-    .stAlert {
-        border-radius: 20px !important;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 600 !important;
-        border: none !important;
-        backdrop-filter: blur(40px) !important;
-        box-shadow: 
-            0 15px 35px rgba(0, 0, 0, 0.25),
-            0 0 80px rgba(56, 189, 248, 0.1),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-        margin: 1.5rem 0 !important;
-        padding: 1.5rem !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    .stAlert:hover {
-        transform: translateY(-2px) !important;
-    }
-    
-    .stAlert.stAlert-info {
-        background: rgba(56, 189, 248, 0.2) !important;
-        border-left: 6px solid #38bdf8 !important;
-        color: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 
-            0 15px 35px rgba(56, 189, 248, 0.3),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-    }
-    
-    .stAlert.stAlert-success {
-        background: rgba(6, 214, 160, 0.2) !important;
-        border-left: 6px solid #06d6a0 !important;
-        color: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 
-            0 15px 35px rgba(6, 214, 160, 0.3),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-    }
-    
-    .stAlert.stAlert-warning {
-        background: rgba(251, 191, 36, 0.2) !important;
-        border-left: 6px solid #fbbf24 !important;
-        color: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 
-            0 15px 35px rgba(251, 191, 36, 0.3),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-    }
-    
-    .stAlert.stAlert-error {
-        background: rgba(239, 68, 68, 0.2) !important;
-        border-left: 6px solid #ef4444 !important;
-        color: rgba(255, 255, 255, 0.95) !important;
-        box-shadow: 
-            0 15px 35px rgba(239, 68, 68, 0.3),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-    }
-
-    /* Professional sidebar text colors */
-    .stSidebar [data-testid="stText"],
-    .stSidebar [data-testid="stMarkdownContainer"],
-    .stSidebar .st-emotion-cache-1jm692h,
-    .stSidebar * {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-family: 'Inter', sans-serif !important;
-    }
-
-    /* Ultimate dropdown styling */
-    div[data-baseweb="popover"] > div {
-        background: rgba(26, 32, 44, 0.95) !important;
-        border: 2px solid rgba(255, 255, 255, 0.2) !important;
-        border-radius: 20px !important;
-        box-shadow: 
-            0 30px 60px rgba(0, 0, 0, 0.4),
-            0 0 100px rgba(56, 189, 248, 0.2),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-        backdrop-filter: blur(40px) !important;
-    }
-    
-    div[data-baseweb="popover"] > div > ul > li {
-        color: rgba(255, 255, 255, 0.9) !important;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 500 !important;
-        padding: 1rem 1.5rem !important;
-        transition: all 0.3s ease !important;
-    }
-    
-    div[data-baseweb="popover"] > div > ul > li[data-mouse-entered="true"] {
-        background: linear-gradient(135deg, rgba(56, 189, 248, 0.3), rgba(168, 85, 247, 0.3)) !important;
-        color: rgba(255, 255, 255, 1) !important;
-    }
-
     /* Ultimate title styling */
-    h1 {
+    h1, .stTitle {
         font-size: 5rem !important;
         font-weight: 900 !important;
         background: linear-gradient(135deg, #38bdf8 0%, #a855f7 20%, #3b82f6 40%, #06d6a0 60%, #f59e0b 80%, #38bdf8 100%) !important;
@@ -490,7 +250,7 @@ st.markdown(
         80% { background-position: 0% 100%; }
     }
     
-    h2 {
+    h2, .stSubheader {
         color: #ffffff !important;
         font-family: 'Inter', sans-serif !important;
         font-weight: 600 !important;
@@ -508,24 +268,13 @@ st.markdown(
     }
 
     /* Professional text styling */
-    p, div, span, label {
+    p, div, span, label, .stMarkdown {
         color: #ffffff !important;
         font-family: 'Inter', sans-serif !important;
         font-weight: 400 !important;
         line-height: 1.7 !important;
     }
     
-    /* Markdown content styling */
-    .stMarkdown {
-        color: #ffffff !important;
-    }
-    
-    .stMarkdown p {
-        font-size: 1rem !important;
-        line-height: 1.8 !important;
-        margin-bottom: 1rem !important;
-    }
-
     /* Ultimate file uploader styling */
     .stFileUploader {
         border: 3px dashed rgba(56, 189, 248, 0.7) !important;
@@ -549,32 +298,9 @@ st.markdown(
             inset 0 2px 0 rgba(255, 255, 255, 0.2) !important;
         transform: translateY(-4px) scale(1.02) !important;
     }
-
-    /* Ultimate radio button styling */
-    div[data-baseweb="radio"] {
-        background: rgba(26, 32, 44, 0.6) !important;
-        border: 2px solid rgba(255, 255, 255, 0.2) !important;
-        border-radius: 16px !important;
-        padding: 1.25rem !important;
-        backdrop-filter: blur(20px) !important;
-        box-shadow: 
-            0 8px 16px rgba(0, 0, 0, 0.15),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-        margin: 0.75rem !important;
-        transition: all 0.4s ease !important;
-    }
     
-    div[data-baseweb="radio"]:hover {
-        background: rgba(56, 189, 248, 0.15) !important;
-        border-color: rgba(56, 189, 248, 0.6) !important;
-        transform: translateY(-2px) !important;
-        box-shadow: 
-            0 12px 25px rgba(0, 0, 0, 0.2),
-            0 0 40px rgba(56, 189, 248, 0.3) !important;
-    }
-
     /* Ultimate image styling */
-    img {
+    .stImage > img {
         border: 3px solid rgba(56, 189, 248, 0.4) !important;
         border-radius: 20px !important;
         box-shadow: 
@@ -583,7 +309,7 @@ st.markdown(
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
     }
     
-    img:hover {
+    .stImage > img:hover {
         transform: scale(1.03) translateY(-4px) !important;
         box-shadow: 
             0 30px 60px rgba(0, 0, 0, 0.4),
@@ -597,42 +323,97 @@ st.markdown(
     header {visibility: hidden;}
     
     /* Ultimate scrollbar */
-    ::-webkit-scrollbar {
-        width: 12px;
+    ::-webkit-scrollbar { width: 12px; }
+    ::-webkit-scrollbar-track { background: rgba(26, 32, 44, 0.4); border-radius: 6px; }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(135deg, #38bdf8, #a855f7); border-radius: 6px; box-shadow: 0 0 20px rgba(56, 189, 248, 0.5); }
+    ::-webkit-scrollbar-thumb:hover { background: linear-gradient(135deg, #0ea5e9, #9333ea); box-shadow: 0 0 30px rgba(168, 85, 247, 0.7); }
+    
+    /* === 入力欄の文字色を黄色に（値・キャレット・プレースホルダー） === */
+    .stTextInput input,
+    .stTextArea textarea,
+    div[data-baseweb="input"] input {
+      color: #FBC02D !important;
+      caret-color: #FBC02D !important;
     }
-    ::-webkit-scrollbar-track {
-        background: rgba(26, 32, 44, 0.4);
-        border-radius: 6px;
+    .stTextInput input::placeholder,
+    .stTextArea textarea::placeholder,
+    div[data-baseweb="input"] input::placeholder {
+      color: rgba(251, 192, 45, 0.6) !important;
     }
-    ::-webkit-scrollbar-thumb {
-        background: linear-gradient(135deg, #38bdf8, #a855f7);
-        border-radius: 6px;
-        box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
-    }
-    ::-webkit-scrollbar-thumb:hover {
-        background: linear-gradient(135deg, #0ea5e9, #9333ea);
-        box-shadow: 0 0 30px rgba(168, 85, 247, 0.7);
+    .stTextInput input:disabled,
+    .stTextArea textarea:disabled,
+    div[data-baseweb="input"] input:disabled {
+      color: rgba(251, 192, 45, 0.5) !important;
     }
     
-    /* Ultimate container styling */
-    div[data-testid="stContainer"] {
-        border: 2px solid rgba(255, 255, 255, 0.15) !important;
-        border-radius: 24px !important;
-        background: rgba(26, 32, 44, 0.4) !important;
-        backdrop-filter: blur(20px) !important;
-        box-shadow: 
-            0 15px 35px rgba(0, 0, 0, 0.25),
-            inset 0 2px 0 rgba(255, 255, 255, 0.15) !important;
-        margin: 1.5rem 0 !important;
-        padding: 2rem !important;
-        transition: all 0.3s ease !important;
+    /* === セレクトの表示値（閉じている時のテキスト）を黄色に === */
+    div[data-baseweb="select"] span,
+    div[data-baseweb="select"] div[role="button"] {
+      color: #FBC02D !important;
     }
     
-    div[data-testid="stContainer"]:hover {
-        transform: translateY(-2px) !important;
-        box-shadow: 
-            0 20px 45px rgba(0, 0, 0, 0.3),
-            inset 0 2px 0 rgba(255, 255, 255, 0.2) !important;
+    /* ▼アイコンも黄色に */
+    div[data-baseweb="select"] svg {
+      color: #FBC02D !important;
+      fill: #FBC02D !important;
+      opacity: 0.95 !important;
+    }
+    
+    /* === セレクトのドロップダウン（ポップオーバー）は body 直下に出るのでグローバル指定 === */
+    [data-baseweb="popover"],
+    [role="listbox"],
+    [data-baseweb="menu"] {
+      background: #11131e !important;
+      border: 2px solid rgba(255, 255, 255, 0.2) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4) !important;
+      z-index: 9999 !important;
+    }
+    [data-baseweb="popover"] ul li,
+    [role="option"],
+    [data-baseweb="menu"] li {
+      color: #ffffff !important;
+    }
+    [role="option"][aria-selected="true"],
+    [data-baseweb="menu"] li[aria-selected="true"],
+    [data-baseweb="menu"] li:hover {
+      background: linear-gradient(135deg, rgba(56,189,248,0.3), rgba(168,85,247,0.3)) !important;
+      color: #ffffff !important;
+    }
+
+    /* ① セレクトの「プレート」（閉じている時の白い板）を黒に */
+    [data-testid="stSelectbox"] > div > div {
+      background: #0b0d15 !important;              /* 黒 */
+      border: 2px solid rgba(255,255,255,0.2) !important;
+      border-radius: 16px !important;
+    }
+
+    /* ② ドロップダウンのパネル自体（開いた時の白い板）を黒に */
+    body > div[role="listbox"],
+    body > div[data-baseweb="popover"] {
+      background: #0b0d15 !important;              /* 黒 */
+      border: 2px solid rgba(255,255,255,0.2) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4) !important;
+      z-index: 9999 !important;
+    }
+
+    /* ③ パネル内の要素で白背景が残る場合の保険（透明化） */
+    body > div[role="listbox"] * ,
+    body > div[data-baseweb="popover"] * {
+      background-color: transparent !important;
+    }
+
+    /* ④ 選択肢のホバー／選択時 */
+    body [role="option"] { color: #ffffff !important; }
+    body [role="option"][aria-selected="true"],
+    body [role="option"]:hover {
+      background: rgba(56,189,248,0.18) !important;
+    }
+
+    /* ⑤ セレクトの値（閉じている時の表示行）も黒背景で統一 */
+    div[data-baseweb="select"] > div[role="combobox"] {
+      background: #0b0d15 !important;
     }
     </style>
     """,
@@ -654,12 +435,12 @@ st.markdown("---")
 st.markdown("""
 <div style="text-align: center; margin: 2rem 0;">
     <span style="background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(168, 85, 247, 0.2)); 
-                 padding: 1rem 2rem; 
-                 border-radius: 50px; 
-                 border: 1px solid rgba(255, 255, 255, 0.2); 
-                 color: rgba(255, 255, 255, 0.9);
-                 font-weight: 600;
-                 letter-spacing: 0.1em;">
+                    padding: 1rem 2rem; 
+                    border-radius: 50px; 
+                    border: 1px solid rgba(255, 255, 255, 0.2); 
+                    color: rgba(255, 255, 255, 0.9);
+                    font-weight: 600;
+                    letter-spacing: 0.1em;">
         Professional Banner Analysis Platform
     </span>
 </div>
@@ -675,34 +456,37 @@ with col1:
     # Clean Form Header
     st.subheader("📝 バナー診断フォーム")
 
-    with st.expander("基本情報", expanded=True):
-        user_name = st.text_input("ユーザー名", key="user_name_input")
+    st.markdown("### 基本情報")
+    with st.container():
+        user_name = st.text_input("ユーザー名", key="user_name")
         age_group = st.selectbox(
             "ターゲット年代",
             ["指定なし", "10代", "20代", "30代", "40代", "50代", "60代以上"],
-            key="age_group_select"
+            key="age_group"
         )
-        platform = st.selectbox("媒体", ["Instagram", "GDN", "YDN"], key="platform_select")
-        category = st.selectbox("カテゴリ", ["広告", "投稿"] if platform == "Instagram" else ["広告"], key="category_select")
-        has_ad_budget = st.selectbox("広告予算", ["あり", "なし"], key="budget_budget_select")
+        platform = st.selectbox("媒体", ["Instagram", "GDN", "YDN"], key="platform")
+        category = st.selectbox("カテゴリ", ["広告", "投稿"] if platform == "Instagram" else ["広告"], key="category")
+        has_ad_budget = st.selectbox("広告予算", ["あり", "なし"], key="has_ad_budget")
         
         purpose = st.selectbox(
             "目的",
             ["プロフィール誘導", "リンククリック", "保存数増加", "インプレッション増加"],
-            key="purpose_select"
+            key="purpose"
         )
 
-    with st.expander("詳細設定", expanded=True):
-        industry = st.selectbox("業種", ["美容", "飲食", "不動産", "子ども写真館", "その他"], key="industry_select")
-        genre = st.selectbox("ジャンル", ["お客様の声", "商品紹介", "ノウハウ", "世界観", "キャンペーン"], key="genre_select")
-        score_format = st.radio("スコア形式", ["A/B/C", "100点満点"], horizontal=True, key="score_format_radio")
-        ab_pattern = st.radio("ABテストパターン", ["Aパターン", "Bパターン", "該当なし"], horizontal=True, key="ab_pattern_radio")
-        banner_name = st.text_input("バナー名", key="banner_name_input")
+    st.markdown("### 詳細設定")
+    with st.container():
+        industry = st.selectbox("業種", ["美容", "飲食", "不動産", "子ども写真館", "その他"], key="industry")
+        genre = st.selectbox("ジャンル", ["お客様の声", "商品紹介", "ノウハウ", "世界観", "キャンペーン"], key="genre")
+        score_format = st.radio("スコア形式", ["A/B/C", "100点満点"], horizontal=True, key="score_format")
+        ab_pattern = st.radio("ABテストパターン", ["Aパターン", "Bパターン", "該当なし"], horizontal=True, key="ab_pattern")
+        banner_name = st.text_input("バナー名", key="banner_name")
 
-    with st.expander("任意項目", expanded=False):
-        result_input = st.text_input("AI評価結果（任意）", help="AIが生成した評価結果を記録したい場合に入力します。", key="result_input_text")
-        follower_gain_input = st.text_input("フォロワー増加数（任意）", help="Instagramなどのフォロワー増加数があれば入力します。", key="follower_gain_input_text")
-        memo_input = st.text_area("メモ（任意）", help="その他、特記事項があれば入力してください。", key="memo_input_area")
+    st.markdown("### 任意項目")
+    with st.container():
+        result_input = st.text_input("AI評価結果（任意）", help="AIが生成した評価結果を記録したい場合に入力します。", key="result_input")
+        follower_gain_input = st.text_input("フォロワー増加数（任意）", help="Instagramなどのフォロワー増加数があれば入力します。", key="follower_gain")
+        memo_input = st.text_area("メモ（任意）", help="その他、特記事項があれば入力してください。", key="memo_input")
 
     # Clean Upload Header
     st.subheader("📸 画像アップロード・AI診断")
@@ -727,7 +511,7 @@ with col1:
 
         with img_col_a:
             st.image(Image.open(uploaded_file_a), caption="Aパターン画像", use_container_width=True)
-            if st.button("Aパターンを採点", key="score_a_btn"):
+            if st.button("Aパターンを採点", key="score_a"):
                 # Check remaining uses
                 if st.session_state.remaining_uses <= 0:
                     st.warning(f"残り回数がありません。（{st.session_state.plan}プラン）")
@@ -880,7 +664,7 @@ with col1:
     
         with img_col_b:
             st.image(Image.open(uploaded_file_b), caption="Bパターン画像", use_container_width=True)
-            if st.button("Bパターンを採点", key="score_b_btn"):
+            if st.button("Bパターンを採点", key="score_b"):
                 # Add plan-based restriction for B-pattern here
                 if st.session_state.plan == "Free":
                     st.warning("この機能はFreeプランではご利用いただけません。")
@@ -1036,7 +820,7 @@ with col1:
         st.markdown("---")
         st.markdown("### ⚖️ A/Bテスト比較分析")
         
-        if st.button("A/Bテスト比較を実行", key="ab_compare_final_btn"):
+        if st.button("A/Bテスト比較を実行", key="ab_compare"):
             with st.spinner("AIがA/Bパターンを比較しています..."):
                 ab_compare_prompt = f"""
 以下のAパターンとBパターンの広告診断結果を比較し、総合的にどちらが優れているか、その理由と具体的な改善点を提案してください。
@@ -1080,7 +864,7 @@ Bパターン診断結果:
 1. さらなる高級感を演出するためのエフェクト強化
 2. ターゲット層により特化したメッセージング最適化
 ---"""
-                    
+                        
                     # Simple comparison results display
                     st.markdown("#### 📊 A/Bテスト比較結果")
                     st.success(ab_compare_content)
@@ -1088,7 +872,8 @@ Bパターン診断結果:
                     st.error(f"A/Bテスト比較中にエラーが発生しました: {str(e)}")
 
 with col2:
-    with st.expander("採点基準はこちら", expanded=True):
+    st.markdown("### 採点基準はこちら")
+    with st.container():
         st.markdown("バナスコAIは以下の観点に基づいて広告画像を評価します。")
         st.markdown(
             """

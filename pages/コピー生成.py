@@ -380,7 +380,7 @@ st.markdown(
     [data-baseweb="popover"],
     [role="listbox"],
     [data-baseweb="menu"] {
-      background: #11131e !important; /* CHANGED TO DARK */
+      background: #11131e !important;
       border: 2px solid rgba(255, 255, 255, 0.2) !important;
       border-radius: 20px !important;
       box-shadow: 0 30px 60px rgba(0,0,0,0.4) !important;
@@ -396,6 +396,41 @@ st.markdown(
     [data-baseweb="menu"] li:hover {
       background: linear-gradient(135deg, rgba(56,189,248,0.3), rgba(168,85,247,0.3)) !important;
       color: #ffffff !important;
+    }
+
+    /* ① セレクトの「プレート」（閉じている時の白い板）を黒に */
+    [data-testid="stSelectbox"] > div > div {
+      background: #0b0d15 !important;              /* 黒 */
+      border: 2px solid rgba(255,255,255,0.2) !important;
+      border-radius: 16px !important;
+    }
+
+    /* ② ドロップダウンのパネル自体（開いた時の白い板）を黒に */
+    body > div[role="listbox"],
+    body > div[data-baseweb="popover"] {
+      background: #0b0d15 !important;              /* 黒 */
+      border: 2px solid rgba(255,255,255,0.2) !important;
+      border-radius: 20px !important;
+      box-shadow: 0 30px 60px rgba(0,0,0,0.4) !important;
+      z-index: 9999 !important;
+    }
+
+    /* ③ パネル内の要素で白背景が残る場合の保険（透明化） */
+    body > div[role="listbox"] * ,
+    body > div[data-baseweb="popover"] * {
+      background-color: transparent !important;
+    }
+
+    /* ④ 選択肢のホバー／選択時 */
+    body [role="option"] { color: #ffffff !important; }
+    body [role="option"][aria-selected="true"],
+    body [role="option"]:hover {
+      background: rgba(56,189,248,0.18) !important;
+    }
+
+    /* ⑤ セレクトの値（閉じている時の表示行）も黒背景で統一 */
+    div[data-baseweb="select"] > div[role="combobox"] {
+      background: #0b0d15 !important;
     }
     </style>
     """,

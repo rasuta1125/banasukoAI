@@ -6,6 +6,9 @@ from datetime import datetime
 
 import auth_utils  # Firebase 認証/残回数管理
 
+# ---------------------------
+# ページ設定 & ログインチェック
+# ---------------------------
 st.set_page_config(layout="wide", page_title="バナスコAI - コピー生成")
 auth_utils.check_login()
 
@@ -377,7 +380,7 @@ st.markdown(
     [data-baseweb="popover"],
     [role="listbox"],
     [data-baseweb="menu"] {
-      background: rgba(26, 32, 44, 0.95) !important;
+      background: #11131e !important; /* CHANGED TO DARK */
       border: 2px solid rgba(255, 255, 255, 0.2) !important;
       border-radius: 20px !important;
       box-shadow: 0 30px 60px rgba(0,0,0,0.4) !important;
